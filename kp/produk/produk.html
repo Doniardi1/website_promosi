@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NyahSeger - Produk</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav style="background:#0b2c4d;" class="navbar navbar-expand-lg navbar-dark  shadow-sm sticky-top" >
+  <div class="container">
+    <a class="navbar-brand" href="#">NyahSeger</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#produk">Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#lokasi">Lokasi</a></li>
+      </ul>
+
+      <!-- CART BUTTON -->
+      <button id="openCart" class="btn btn-outline-light ms-3">
+        🛒 <span id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <h2 class="section-title">Produk Unggulan</h2>
+
+  <!-- Filter dan Search -->
+  <div class="text-center mb-3">
+    <input type="text" id="searchInput" class="form-control w-75 mx-auto mb-2" placeholder="Cari produk...">
+    <div class="d-flex justify-content-center flex-wrap gap-2">
+      <button class="btn btn-outline-primary active" data-filter="all">Semua</button>
+      <button class="btn btn-outline-primary" data-filter="bunga">Bunga</button>
+      <button class="btn btn-outline-primary" data-filter="peti">Peti</button>
+      <button class="btn btn-outline-primary" data-filter="dupa">Dupa</button>
+      <button class="btn btn-outline-primary" data-filter="minyak">Minyak</button>
+      <button class="btn btn-outline-primary" data-filter="sesajen">Sesajen</button>
+    </div>
+  </div>
+
+  <!-- Produk -->
+  <div class="row g-4" id="productGrid">
+    <div class="col-6 col-md-4 col-lg-3" data-category="bunga">
+      <div class="card">
+        <div class="card-img"><img src="../img/gambar2.jpg" alt="Bunga Melati"></div>
+        <div class="card-body">
+          <h3 class="card-title">Bunga Melati Segar</h3>
+          <p class="price">Rp 25.000</p>
+          <button style="background:#0b2c4d;" class="btn btn-dark w-100 addToCart"
+            data-name="Bunga Melati Segar"
+            data-price="25000">
+            Tambah
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3" data-category="bunga">
+      <div class="card">
+        <div class="card-img"><img src="../img/gambar3.jpg" alt="Bunga Mawar"></div>
+        <div class="card-body">
+          <h3 class="card-title">Bunga Mawar Merah</h3>
+          <p class="price">Rp 30.000</p>
+          <button style="background:#0b2c4d;" class="btn btn-dark w-100 addToCart"
+            data-name="Bunga Mawar Merah"
+            data-price="30000">
+            Tambah
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3" data-category="peti">
+      <div class="card">
+        <div class="card-img"><img src="https://picsum.photos/400/400?3" alt="Peti Jati"></div>
+        <div class="card-body">
+          <h3 class="card-title">Peti Kayu Jati</h3>
+          <p class="price">Rp 2.500.000</p>
+          <button style="background:#0b2c4d;" class="btn btn-dark w-100 addToCart"
+            data-name="Peti Kayu Jati"
+            data-price="2500000">
+            Tambah
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3" data-category="dupa">
+      <div class="card">
+        <div class="card-img"><img src="https://picsum.photos/400/400?4" alt="Dupa Bali"></div>
+        <div class="card-body">
+          <h3 class="card-title">Dupa Harum Bali</h3>
+          <p class="price">Rp 15.000</p>
+          <button style="background:#0b2c4d;" class="btn btn-dark w-100 addToCart"
+            data-name="Dupa Harum Bali"
+            data-price="15000">
+            Tambah
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- POPUP KERANJANG -->
+<div id="cartModal">
+  <div id="cartBox">
+    <h4 class="mb-2">Keranjang Belanja</h4>
+    <div id="cartItems"></div>
+    <hr>
+    <label class="fw-bold">Atas Nama Pembeli:</label>
+    <input type="text" id="buyerName" class="form-control mb-3" placeholder="Nama lengkap Anda">
+    <p class="mb-2"><strong>Total: </strong>Rp <span id="totalHarga">0</span></p>
+    <div class="d-grid gap-2">
+      <button id="checkoutWA" class="btn btn-success">Checkout via WhatsApp</button>
+      <button id="closeCart" class="btn btn-outline-danger">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h4>NyahSeger</h4>
+      <p>Nyah Seger – Toko bunga tabur segar untuk melayat. Hadir dengan pilihan bunga berkualitas, harum, dan penuh makna.</p>
+      <button class="cta">COBA SEKARANG</button>
+    </div>
+
+    <div class="footer-subscribe">
+      <h4>Subscribe</h4>
+      <p>Newsletter :</p>
+      <div class="input-box">
+        <input type="email" placeholder="Email address" />
+        <button>→</button>
+      </div>
+      <small>by subscribing you agree to our privacy policy</small>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Navigate</h4>
+      <a href="kp/index.html">HOME</a>
+      <a href="kp/index.html">ABOUT ME</a>
+      <a href="kp/produk/produk.html">PRODUC</a>
+      <a href="kp/index">LOCATION</a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2025 Nyah Seger – Bunga Tabur Segar, Penuh Makna
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js">
+</script>
+</body>
+</html>
