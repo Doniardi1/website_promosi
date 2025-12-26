@@ -91,6 +91,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       max-height: 90vh;
       overflow: auto;
+     color:#000;
     }
 
     /* Footer */
@@ -191,4 +192,5 @@
       .card-img {
         height: 220px;
       }
+
     }
