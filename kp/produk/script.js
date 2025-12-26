@@ -1,31 +1,3 @@
-// Filter & Search (produk)
-  const filterButtons = document.querySelectorAll('[data-filter]');
-  const searchInput = document.getElementById('searchInput');
-  const navSearch = document.getElementById('navSearch');
-  const productCards = document.querySelectorAll('#productGrid > .col-6, #productGrid > .col-6.col-md-4, #productGrid > .col-6.col-md-4.col-lg-3, #productGrid > .col-6.col-md-4.col-lg-3');
-
-  // Normalize product card selection
-  function allProductCards() {
-    return Array.from(document.querySelectorAll('#productGrid .col-6, #productGrid .col-12, #productGrid .col-4, #productGrid .col-3, #productGrid [data-category]'));
-  }
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
-      applyFilterAndSearch(filter, searchInput.value.trim().toLowerCase());
-    });
-  });
-
-  navSearch.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') e.preventDefault();
-  });
-
-  searchInput.addEventListener('input', () => {
-    const activeFilter = document.querySelector('[data-filter].active').getAttribute('data-filter');
-    applyFilterAndSearch(activeFilter, searchInput.value.trim().toLowerCase());
-  });
 
   function applyFilterAndSearch(filter, search) {
     const cards = allProductCards();
@@ -181,4 +153,5 @@
   });
 
   // initial update (kosong)
+
   updateCart();
