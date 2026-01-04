@@ -100,7 +100,12 @@
       color: #fff;
       margin-top: 60px;
     }
-
+    .icon{
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      object-fit: cover;
+    }
     .footer-container {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr;
