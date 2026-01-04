@@ -2,10 +2,10 @@ const journeyTabs = document.querySelectorAll(".journey-tabs span");
   const journeyDesc = document.querySelector(".journey-desc");
 
   const journeyData = {
-    future: "Erigo berencana memperluas pasar internasional, meningkatkan kualitas produksi, serta membuka flagship store di berbagai negara.",
-    now: "Erigo kini menjadi salah satu brand fashion terbesar di Indonesia dengan jutaan pelanggan dan penjualan stabil setiap bulannya.",
-    "2022": "Tahun 2022, Erigo tampil di New York Fashion Week dan mendapatkan perhatian global dari berbagai media internasional.",
-    "2019": "Pada 2019, Erigo mengalami pertumbuhan besar berkat viral di media sosial dan kolaborasi dengan influencer terkenal."
+    future: "kios Nyah Seger nusukan akan mencoba ingin membuka lagi kios baru di tempat lain nantikan kios kami nantinya.",
+    now: "Kios Nyah seget nusukan akan mencoba menjadi labih baik lagi dan akan menjual bunga dengan kualitas yang maksimal.",
+    "2022": "Tahun 2022, kios ini berpindah kepemilikan dan akhirnya kios dijual.",
+    "2019": "Pada 2019,kios ini berubah dari yang menjual agar agar menjadi sembako."
   };
 
   journeyTabs.forEach(tab => {
