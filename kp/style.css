@@ -95,7 +95,17 @@
       margin: 0 auto;
       color: #444;
     }
-
+    /* PRODUCT SECTION */
+    .card-img {
+      height: 300px;
+      overflow: hidden;
+      background: #f3f3f3;
+    }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     /* LOKASI */
     .lokasi-section {
       text-align: center;
@@ -232,7 +242,12 @@
       font-size: 10px;
       color: #ccc;
     }
-
+    .icon{
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      object-fit: cover;
+    }
     .footer-nav a {
       display: block;
       color: #ccc;
